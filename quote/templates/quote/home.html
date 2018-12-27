@@ -1,0 +1,223 @@
+<!doctype html>
+{% load static %}
+
+{% load widget_tweaks %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'quote/style.css' %}">
+    <title>Payout</title>
+  </head>
+  <body>
+<nav class=" container navbar navbar-dark navbar-expand-lg" style="background-color: #37517e">
+  <a class="navbar-brand" href="{% url 'quote:home' %}" >Payout</a>
+  <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="color: #fff">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active">
+        <a class="nav-link" href="{% url 'quote:home' %}" style="color: #fff;font-weight:500;">Home <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'quote:about' %}" style="color: #fff;font-weight:500;">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'quote:contact' %}" style="color: #fff;font-weight:500;">Contact Us</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="{% url 'quote:faq' %}" style="color: #fff;font-weight:500;">FAQ</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container" id="container1">
+  <h1 class="text-sm-center text-lg-left">The fastest way to sell your used stuff.</h1>
+  <div class="row" id="mainleft">
+    <div class="col-sm-12 col-lg-6" id="mainleft2">
+      <div>
+        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+          <li class="nav-item" id="nav-item1">
+            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">Sell</a>
+          </li>
+          <li class="nav-item" id="nav-item2">
+            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">Trade-in</a>
+          </li>
+          </ul>
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+          <form method="post" novalidate>
+  {% csrf_token %}
+
+  {% for hidden_field in form.hidden_fields %}
+    {{ hidden_field }}
+  {% endfor %}
+
+  {% if form.non_field_errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in form.non_field_errors %}
+        {{ error }}
+      {% endfor %}
+    </div>
+  {% endif %}
+
+  {% for field in form.visible_fields %}
+    <div class="form-group" style="width: 90%;padding-left: 50px; padding-right: 0px; margin-bottom:0px !important;">
+      {{ field.label_tag }}
+
+      {% if form.is_bound %}
+        {% if field.errors %}
+          {% render_field field class="form-control is-invalid" %}
+          {% for error in field.errors %}
+            <div class="invalid-feedback">
+              {{ error }}
+            </div>
+          {% endfor %}
+        {% else %}
+          {% render_field field class="form-control is-valid" %}
+        {% endif %}
+      {% else %}
+        {% render_field field class="form-control" %}
+      {% endif %}
+
+      {% if field.help_text %}
+        <small class="form-text text-muted">{{ field.help_text }}</small>
+      {% endif %}
+    </div>
+  {% endfor %}
+
+  <br><br><button type="submit" id="form-btn"class="btn btn-primary col-sm-12">Submit</button>
+</form>
+<h2> {{posts}}</h2>
+ </div>
+      <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab"><p id="update">Sorry, this feature currently isn't available in your location.</p></div>
+      </div>
+      </div>
+    </div>
+    <div class="d-none d-lg-block col-lg-6 order-lg-first" id="mainleft1">
+    </br><h2>Traditional approaches could take weeks to find a  potential buyer for your used electronics. Payout is up to 7x faster on surveyed routes.</h2>
+    </br><h2>It's only fair.</h2>
+    </br></br>
+    <a href="{% url 'quote:about' %}">
+    <button  id="learnmore">
+      Learn more
+    </button>
+    </a>
+    <div class="row" id="verifydiv">
+    <div class="verifydiv">
+      <img  class="verify" src="/static/quote/images/security.svg"/>
+      <h2 class="verifytext">CPC Regulated</h2>
+      <!--<p id="chassis">Over 100,000 customers served</p>-->
+    </div>
+    <div class="verifydiv" id="verifydiv1">
+      <img  class="verify" src="/static/quote/images/customers.svg"/>
+      <h2 class="verifytext">Thousands of customers served</h2>
+      <!--<p id="chassis">Let us help you</p>-->
+    </div>
+    </div>
+  </div>
+  </div>
+  <div class="d-none d-lg-block" id="circle"></div>
+  <div class="d-none d-lg-block" id="trapezoid"></div>
+</div>
+<div id="container5">
+  <br><h4>Worry less, save time when selling your used stuff</h4>
+  <br><img  id="graph" src="/static/quote/images/graph2.gif" />
+  <br><br><p>Payout is responsive by design, using a state of the art pricing algorithms to give you a fair quote every time,helping you to sell more efficiently.</p>
+</div>
+<div  id="container3">
+  <h4>Some of what is said about us</h4>
+<div class="row">
+  <div class="col-lg-4" id ="review1">
+    <p>I asked for the service of installation of wire for the bathroom and the technical wall in a ready and functional and work in a professional and clean the place where he worked and was at the top of the taste and literature, simplified that in the service of ZiD in Egypt continued on the same level and thank you"
+      <br><br><br>Shaima Attieh
+    </p>
+  </div>
+  <div class="d-none d-lg-block col-lg-4" id="review2">
+    <p>Excellent service accuracy in the dates professional and add to the end of the engineer Ahmed Ramadan Jah installed television and arrived in the shower and clothes more Shose and the place of his work and literature and ethics and respect for the man Mprefsh eye and a speaker and a violin 50% frankly very happy to deal with you and worked Oder for the TV is also safe "
+
+      <br><br><br>Mohammed Osama
+
+    </p>
+  </div>
+  <div class="d-none d-lg-block col-lg-4" id="review3">
+    <img id="review3img" src="/static/quote/images/review3.jpg"/>
+  </div>
+</div>
+</div>
+
+<div  id="container4">
+  <h4>How it works</h4>
+  <br><div class="row">
+  <div class="col-sm-12 col-lg-4" id="container9">
+    <br><h6>Fill out a form</h6>
+    <br><br><br><img  class="imgblock" src="/static/quote/images/1.png" />
+    <div class="sensei">
+    <p>Fill out a form with the specifications of your device as accurately as possible.</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-lg-4" id="container6">
+    <br><h6>Accept offer</h6>
+
+    <br><br><br><img class="imgblock"  src="/static/quote/images/form5.png"/>
+    <div class="sensei">
+    <p>Our 10-point value assessment algorithm provides real-time pricing, so you can  rest assured that you'll get an accurate quote everytime.</p>
+    </div>
+  </div>
+  <div class="col-sm-12 col-lg-4" id="container7">
+    <br><h6>Get paid</h6>
+    <br><br><br><img  class="imgblock" src="/static/quote/images/cash3.png" />
+    <div class="sensei">
+    <p>We'll send over an agent to evaluate your item and provide you with a final offer. Payments are delivered on the spot.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+
+<div id="container8">
+  <div class="container">
+  <br><div class="row" id="container8row">
+    <div class="col-sm-12" id="container8left">
+      <h1>Why choose us?</h1>
+      <br><p id="text">How we compare with other ways to sell</p>
+      <br><br><br><br><ul id=ul>
+        <li class="tip"><font class=number>1</font>Transparent inspection </li>
+        <li class="tip"><font class=number>2</font>Get a price upfront </li>
+        <li class="tip"><font class=number>3</font>Fast, safe and easy sale </li>
+        <li class="tip"><font class=number>4</font>Sell immediately </li>
+        <li class="tip"><font class=number>5</font>Sell in any condition </li>
+        <li class="tip"><font class=number>6</font>Get paid safely in your account</li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+<div class="col-sm-12" id="faq">
+  <h4>Any Questions?</h4>
+  <p>We are here to help you!</P>
+<a href="{% url 'quote:faq' %}">
+  <button class="bottom" >FAQ</button>
+</a>
+<a href="{% url 'quote:contact' %}">
+  <button class="bottom" >Contact Us</button>
+</a>
+</div>
+<footer><p id="footer-text">2018 © All rights reserved</p></footer>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

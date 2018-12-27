@@ -1,0 +1,60 @@
+{% extends 'quote/base.html' %}
+{% block content%}
+<!doctype html>
+{% load static %}
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'quote/about.css' %}">
+  <title>Recommerce</title>
+</head>
+<body>
+  <div id="divone">
+    <h1>Our Story</h1>
+  </div>
+  <div class="container">
+  <div class="row">
+    <div id="divtwo"  class="col-sm-12 col-lg-6">
+    <h2>Our Services</h2>
+    <p>We are Nigeria's largest electronic buying service with the goal of helping hundreds of customers to sell their electronics.At Payout our passion is to build the infrastructure for commerce that allows sellers and buyers of Nigerian used electronics to exchange value quickly, cheaply and with unhindered access to independent relevant information required for decision making. </p>
+    <h4>Revolutionizing used sales</h4>
+    <p>You can now get your device inspected and sold at fair price within minutes through Payout's safe and hassle free process. We use an internally developed algorithm market and a professionally trained team to conduct inspections and valuations.</p>
+      <br>
+    <li class="tip"><font class=number>1</font>Transparent inspection </li>
+    <li class="tip"><font class=number>2</font>Get a price upfront </li>
+    <li class="tip"><font class=number>3</font>Fast, safe and easy sale </li>
+    <li class="tip"><font class=number>4</font>Sell immediately </li>
+    <li class="tip"><font class=number>5</font>Sell in any condition </li>
+    <li class="tip"><font class=number>6</font>Get paid safely in your account</li>
+    <br>
+    <br>
+    <br>
+    <h4>Revolutionizing used sales</h4>
+    <p>You can now get your car inspected and sold at fair price within an hour through Cars45's safe and hassle free process. Our nationwide network of purchase centers use an internally developed algorithm market intelligence, and a professionally trained team to conduct inspections and valuations.</p>
+  </div>
+  <div id="blockofimages" class="d-none d-lg-block col-lg-6">
+    <img id="lagos" src="/static/quote/images/lagos.jpg"/>
+    <img id="busy" src="/static/quote/images/busy.jpg"/>
+    <img id="quick2" src="/static/quote/images/quick2.jpeg"/>
+  </div>
+  </div>
+  <div id="contactnow">
+    <h5>Any Questions?</h5>
+    <div class="row">
+      <a class="link" href="{% url 'quote:faq' %}">
+        <button class="button"> FAQ</button>
+      </a>
+      <a class="link" href="{% url 'quote:contact' %}">
+        <button id= "button2" class="button">Contact Us</button>
+      </a>
+    </div>
+    <div>
+  </div>
+  <footer id="bottom"><p id="footer-text"> 2018 © All rights reserved</p></footer>
+</body>
+{%endblock%}

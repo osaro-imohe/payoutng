@@ -1,0 +1,176 @@
+body{overflow-y: :scroll;
+     overflow-x: hidden;
+     background-color: #37517e;
+     margin: 0;
+}
+html{
+  margin: 0;
+  overflow: hidden;
+}
+
+#image{
+  width: 30%;
+  height: 100%;
+  border: solid
+}
+h1{
+  font-size: .875rem !important;
+  padding: 0 !important;
+  color: #6e747b;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.5;
+  padding: 0;
+}
+h2{
+  margin-top: 10%;
+  font-size: 2.5rem;
+  color:#accf29;
+  padding: 0;
+  font-weight: 700;
+
+}
+h3{
+  font-size: 1.125rem;
+  color: #434d51;
+  padding: 0;
+  line-height: normal;
+  letter-spacing: -.05625rem;
+  font-weight: 400;
+}
+h4{
+  padding-top: 3%;
+  color: #accf29;
+}
+#image2{
+  margin-top: 10%;
+  margin-left: 20%;
+  width: 60%;
+  height: 80%;
+}
+#left{
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  border-right: 1px solid silver;
+}
+
+#left{
+  width: 100%;
+  height: 50%;
+  background-color: #fff;
+  margin-left: 1% !important;
+  text-align: center;
+  align-items: center;
+  margin-top: 10%;
+  border-radius: .3125rem;
+  border-top-left-radius: 0.3125rem;
+  border-top-right-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
+  border-bottom-left-radius: 0.3125rem;
+}
+#one{
+  width: 100%;
+  height: 10%;
+
+}
+#two{
+  width: 100%;
+  height: 10%;
+
+}
+#three{
+  width: 100%;
+  height: 15%;
+  font-size: 1rem;
+  letter-spacing: -.05rem;
+
+}
+#four{
+  padding-top: 4%;
+  width: 100%;
+  height: 15%;
+
+}
+#five{
+  width: 100%;
+  height: 50%;
+  font-size: .875rem;
+  color: #6e747b;
+  font-weight: 300;
+  text-align: center;
+  line-height: 1.5;
+  padding-top: .6875rem;
+
+}
+
+.location-form{
+  width: 100%;
+}
+#rightcontainer{
+  margin-top: 10%;
+  text-align: center;
+}
+.form-control{
+  height: 60px;
+  margin-top: 20px;
+}
+h5{
+  font-size: 1.5rem;
+    color: #fff;
+    letter-spacing: -.06875rem;
+    font-weight: 700;
+    display: block;
+    padding-bottom: .625rem;
+}
+
+#text{
+  font-size: .875rem;
+    color: #fff;
+    line-height: 1.5;
+    font-weight: 300;
+    display: block;
+    padding-bottom: 1rem;
+}
+
+#mainbtn{
+  height: 50px;
+  border-color: #accf29;
+  background-color: #accf29;
+}
+.group {
+    position: relative;
+}
+
+textarea, label {
+    font-size: 12px;
+    font-family: Arial, serif;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: .5rem;
+  font-size: 15px;
+  font-family: Arial, serif;
+  width: 30%;
+  border: none;
+    }
+
+textarea {
+  overflow: auto;
+  resize: vertical;
+  width: 68%;
+  border:none;
+}
+#row{
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  margin-top: 10px;
+  border-top-left-radius: 0.3125rem;
+  border-top-right-radius: 0.3125rem;
+  border-bottom-right-radius: 0.3125rem;
+  border-bottom-left-radius: 0.3125rem;
+}

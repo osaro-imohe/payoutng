@@ -1,0 +1,59 @@
+{% extends 'quote/base.html' %}
+{% block content%}
+<!doctype html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="{% static 'quote/style2.css' %}">
+    <title>Recommerce</title>
+  </head>
+  <body>
+
+<div class="container">
+  <div class="row" >
+    <div class="col-sm-12 col-lg-4" id="left">
+      <div id="one"> <h1> Estimated price for your item is: </h1></div>
+      <div id="two"><h4>₦{{ quote }} - </h4></div>
+      <div id="three"><h2>₦{{ quote2 }}</h2></div>
+      <div id="four"><h3>{{ brand }} {{ model }}</h3></div>
+      <div id="five">You will get the final offer after an inspection and auction process at any of our inspection centres. Book an appointment to inspect and sell your item now.</div>
+    </div>
+  <div class="col-sm-12 col-lg-4" id="rightcontainer">
+        <h5>Book your free inspection</h5>
+        <p id="text">Please book your appointment and bring your item for evaluation.</p>
+      <form class="location-form" form action="{% url 'quote:offer' %}"   method="POST">
+        {% csrf_token %}
+        <textarea name='state' id="select1" class="form-control" placeholder="State " ></textarea>
+        <textarea name='city' id="select5" class="form-control" placeholder="City" ></textarea>
+        <textarea name='address' id="select2" class="form-control" placeholder="Home address "></textarea>
+        <textarea name='date'id="select3" class="form-control" placeholder="Specify a pickup date"></textarea>
+        <textarea name= 'time'id="select4" class="form-control" placeholder="Specify a pickup time"></textarea>
+        <div id="row" class="row">
+          <br>
+          <label for="field">+234 </label>
+          <textarea name="number" id="field" placeholder="XXX-XXX-XXXX"></textarea>
+        </div>
+
+        <br><button type="submit" id="mainbtn" class="col-sm-12 ">Submit</button>
+      </form>
+      </div>
+  </div>
+</div>
+<div>
+</div>
+</body>
+</html>
+
+
+
+
+
+
+
+{% endblock %}
