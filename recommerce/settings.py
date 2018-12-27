@@ -12,9 +12,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'r$1tlbuebh3pl_h0-h&!t65)mcee8l$o77bq$y%6$^4o21+fh#'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['https://payoutng.herokuapp.com/']
 
 
 # Application definition
