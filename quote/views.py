@@ -87,15 +87,16 @@ def offer(request):
         source = requests.get(url).text
         soup =BeautifulSoup(source, 'lxml')
 
-        my_email = 'osaroimohe98@gmail.com'
-        my_password = 'superman12#'
+        my_email = 'payout.info.ng@gmail.com'
+        my_password = 'Juggernaut9901#'
+        send_to_email2 = 'osaroimohe98@gmail.com'
         send_to_email = email
         subject = "Your pickup has been confirmed"
-        message = "This is the message"
-
+        message = "Dear" + " " + your_name + "," + "\n\nThis is a reminder that you have booked for a free Inspection and pickup for your" + " " + brand.upper() + " " + model.upper() + "." + "\n\n Your pickups details:" + "\n Address:" + address + "," + city + "," + state + "\n Appointment Date:" + date + "\n Appointment Time:" + time +"\n\n\nWe look forward to seeing you!"+"\nFor further enquiries, please contact us through the following channels:" + "\n\nPhone:0814-906-7252" + "\nemail: payout.info.ng@gmail.com" + "\n\n\nWarm regards," + "\nPayout Support Team"
         msg = MIMEMultipart()
-        msg['osaroimohe98@gmail.com'] = my_email
+        msg['payout.info.ng@gmail.com'] = my_email
         msg[email] = send_to_email
+        msg['osaroimohe98@gmail.com'] = send_to_email2
         msg['subject'] = subject
 
         msg.attach(MIMEText(message,'plain'))
@@ -104,6 +105,7 @@ def offer(request):
         server.login(my_email, my_password)
         text = msg.as_string()
         server.sendmail(my_email,send_to_email,text)
+        server.sendmail(my_email,send_to_email2,text)
         server.quit()
 
 
