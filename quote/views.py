@@ -62,9 +62,9 @@ def home(request):
                 average = total_price / 50
                 average1= average/100
                 rounder = round(average1 * 50)
-                quote = rounder * 362
+                quote = rounder
                 quote2 = round(quote * 1.6)
-                print("₦%d" % quote)
+                print("$%d" % quote)
             return render(request, 'quote/home2.html',{'brand':brand,'model':model, 'quote' : quote,'quote2': quote2, 'date':datetime.date.today() + datetime.timedelta(days=1),'date2':datetime.date.today() + datetime.timedelta(days=2),'date3':datetime.date.today() + datetime.timedelta(days=3),})
     else:
         form = ContactForm()
